@@ -13,10 +13,27 @@
             background-size: cover;
             color: #ffffff;
             text-align: center;
-            overflow: hidden;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            height: 100%;
         }
 
-        /* Modal Style */
+        .reveal-btn {
+            background-color: #ff6347;
+            color: #fff;
+            font-size: 1.5rem;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-btn:hover {
+            background-color: #e53e29;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -26,6 +43,7 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
         }
 
         .modal-content {
@@ -35,20 +53,16 @@
             border-radius: 15px;
             width: 90%;
             max-width: 800px;
-            margin: 50px auto;
+            margin: 5% auto;
             padding: 20px;
             text-align: left;
             font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            max-height: 80%; /* Restrict height for longer content */
-            overflow-y: auto; /* Enable scrolling for long text */
         }
 
         .modal-content h2 {
             font-family: 'Great Vibes', cursive;
             font-size: 2.5rem;
             color: #ff6347;
-            text-shadow: 2px 2px 4px rgba(255, 99, 71, 0.8);
             margin-bottom: 20px;
         }
 
@@ -64,7 +78,6 @@
             color: #ff6347;
         }
 
-        /* Intro Style */
         .intro {
             display: flex;
             flex-direction: column;
@@ -73,7 +86,6 @@
             height: 100vh;
             text-align: center;
             background: rgba(0, 0, 0, 0.6);
-            animation: fadeIn 5s forwards;
         }
 
         h1 {
@@ -92,102 +104,58 @@
             color: #ff6347;
             cursor: pointer;
             margin-top: 20px;
-            text-decoration: none;
         }
 
         .letter-symbol:hover {
             color: #e53e29;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            p {
-                font-size: 1.2rem;
-            }
-
-            .modal-content {
-                font-size: 1rem;
-            }
-
-            .modal-content h2 {
-                font-size: 2rem;
-            }
-
-            .letter-symbol {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1.1rem;
-            }
-
-            .modal-content {
-                font-size: 0.9rem;
-            }
-
-            .modal-content h2 {
-                font-size: 1.8rem;
-            }
-
-            .letter-symbol {
-                font-size: 1.5rem;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Intro Section -->
+
+    <audio id="bgm">
+        <source src="https://www.dropbox.com/scl/fi/c6b37n6tyzh76sp5rnbzf/Taylor-Swift-Lover-Official-Music-Video-AudioTrimmer.com.mp3?rlkey=lnc7hfl2zaqi40w0pczanp3yd&st=lt0v1ncd&dl=1" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="intro">
         <h1>Happy New Year, Samia!</h1>
         <p>Wishing you a year filled with love, happiness, and dreams come true!</p>
-        <a href="javascript:void(0);" class="letter-symbol" id="myBtn">✉️</a>
+        <span class="letter-symbol" id="openLetter">✉️</span>
     </div>
 
-    <!-- The Modal for the Letter -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Dear Samia,</h2>
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Dear Chamiya,</h2>
             <p>
-                Hey, the letter content begins here... 
-                <br><br>
-               
-                emm actually ekta kotha bolbo ami tbh kokhono happy new year niye kokhono happy hoi nai or kokhono kwk speicial vhabe ei happy year niye wish korsii just if happy new year bolto ami just back reply diye ditam but at the first time ever in my life idk why i wanna wish youuu happy new year but not in normal way ken jani special feel kortesi tbh ami kokhono happy new year niye excited chilam na buttt tor sathe and tor jnne somehow or somewhere ami onkk beshii khushi and pecefull lagtese sotti jaaan last year amr onk ups and down gese but down phase ta e beshi gese first e vhabisilam first na mid of the year e achha na first er dike e keno jani vhabsilam or feel hoisilo year ta amr jnne khub worst jabe but shob kichur pore jokhon ami shob kichu thik kore nijere abr uprise korte chilam oy protest er time tor sathe oy chat kora theke shuru kore frndship ta amr life er onk special idk why with youuu amr onkk ekta innner peaceful feelings ashe amr mean onk beshi own lage tore amii kokhono life e kokhono kono manush er sathe emn own and home feel korii naaii not even with my bestfriend they had their own life own happiness but tor modhhe ami amder happiness dekhi mean ei duita life k ee ek mne hoi, jaaaaan seriously tui amr life tare emn special kore disos jeta ami kokhono vhabi nai j ami emn o happiness deserve korii or korbo like whatevery i am getting from you i never felt like that, ami kokhono loveee meann what is actually love looks like, felt like kokhono feel kori nai ami kokhono onner upor dependent chilam na but ami jani na amii tor upor onk tuko dependent hoi gesi mean amr happiness, sadness shob tore niye, jaaan sottti tore ami amr life e pai dream life lead kortesii thank you so much and jaan onk beshi valobashiii toke..I just pray to allah that amra emnnn amder sharatajibon par kori and after that o amra eksathe thakiii sottti onk beshii pray koriii..onk beshi valobashi jaan toke....onk beshi khushi lage happy new year with youuu vhaii sharajibon amr sathe thakis jaan amr hoye....  
-                <br><br>
-                Onk beshi valobashi jaan toke... Happy New Year!
+                emm actually ekta kotha bolbo ami tbh kokhono happy new year niye kokhono happy hoi nai or kokhono kwk speicial vhabe ei happy year niye wish korsii just if happy new year bolto ami just back reply diye ditam but at the first time ever in my life idk why i wanna wish youuu happy new year but not in normal way ken jani special feel kortesi tbh ami kokhono happy new year niye excited chilam na buttt tor sathe and tor jnne somehow or somewhere ami onkk beshii khushi and pecefull lagtese sotti jaaan last year amr onk ups and down gese but down phase ta e beshi gese first e vhabisilam first na mid of the year e achha na first er dike e keno jani vhabsilam or feel hoisilo year ta amr jnne khub worst jabe but shob kichur pore jokhon ami shob kichu thik kore nijere abr uprise korte chilam oy protest er time tor sathe oy chat kora theke shuru kore frndship ta amr life er onk special idk why with youuu amr onkk ekta innner peaceful feelings ashe amr mean onk beshi own lage tore amii kokhono life e kokhono kono manush er sathe emn own and home feel korii naaii not even with my bestfriend they had their own life own happiness but tor modhhe ami amder happiness dekhi mean ei duita life k ee ek mne hoi, jaaaaan seriously tui amr life tare emn special kore disos jeta ami kokhono vhabi nai j ami emn o happiness deserve korii or korbo like whatevery i am getting from you i never felt like that, ami kokhono loveee meann what is actually love looks like, felt like kokhono feel kori nai ami kokhono onner upor dependent chilam na but ami jani na amii tor upor onk tuko dependent hoi gesi mean amr happiness, sadness shob tore niye, jaaan sottti tore ami amr life e pai dream life lead kortesii thank you so much and jaan onk beshi valobashiii toke..I just pray to allah that amra emnnn amder sharatajibon par kori and after that o amra eksathe thakiii sottti onk beshii pray koriii..onk beshi valobashi jaan toke....onk beshi khushi lage happy new year with youuu vhaii sharajibon amr sathe thakis jaan amr hoye...
             </p>
         </div>
     </div>
 
     <script>
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
+        const modal = document.getElementById("myModal");
+        const openLetter = document.getElementById("openLetter");
+        const closeModal = document.getElementById("closeModal");
+        const bgm = document.getElementById("bgm");
 
-        // Open modal
-        btn.onclick = function() {
+        openLetter.onclick = function () {
             modal.style.display = "block";
+            bgm.play();
         };
 
-        // Close modal
-        span.onclick = function() {
+        closeModal.onclick = function () {
             modal.style.display = "none";
+            bgm.pause();
+            bgm.currentTime = 0;
         };
 
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            if (event.target == modal) {
+        window.onclick = function (event) {
+            if (event.target === modal) {
                 modal.style.display = "none";
+                bgm.pause();
+                bgm.currentTime = 0;
             }
         };
     </script>
