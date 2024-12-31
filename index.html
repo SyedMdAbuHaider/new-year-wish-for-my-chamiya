@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy New Year, Chamiya!</title>
+    <title>Happy New Year, Samia!</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <style>
         body {
@@ -68,8 +68,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
             transform: scale(1.05);
             transition: transform 0.3s ease-in-out;
-            max-height: 80vh; /* Limit the height of the modal */
-            overflow-y: auto; /* Allow vertical scrolling */
+            overflow: auto; /* Ensures content inside modal can scroll if necessary */
         }
 
         .modal-content h2 {
@@ -214,17 +213,12 @@
 
     <!-- Audio Embed with Auto Play and Hidden Icon -->
     <div class="audio-embed">
-        <iframe src="https://audio.com/embed/audio/1789992367746175?theme=image&autoplay=1&hide=player&controls=0" 
-                style="display:block; border-radius: 1px; border: none; height: 204px; width: 600px;" 
-                allow="autoplay"></iframe>
-        <a href="https://audio.com/syed-md-abu-haider" style="text-align: center; display: block; color: #A4ABB6; font-size: 12px; font-family: sans-serif; line-height: 16px; margin-top: 8px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-            @syed-md-abu-haider
-        </a>
+        <audio id="bgm" src="https://github.com/SyedMdAbuHaider/new-year-wish-for-my-chamiya/raw/refs/heads/main/Taylor%20Swift%20-%20Lover%20(Official%20Music%20Video).mp3" preload="auto"></audio>
     </div>
 
     <!-- Intro Section -->
     <div class="intro">
-        <h1>Happy New Year, Chamiya!</h1>
+        <h1>Happy New Year, Samia!</h1>
         <p>Wishing you a year filled with love, happiness, and dreams come true!</p>
         <!-- Letter symbol to open the letter -->
         <a href="javascript:void(0);" class="letter-symbol" id="myBtn">✉️</a>
@@ -244,21 +238,25 @@
         var modal = document.getElementById("myModal");
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];
+        var bgm = document.getElementById("bgm");
 
         // Open the modal
         btn.onclick = function() {
             modal.style.display = "block";
+            bgm.play(); // Play BGM when the modal is opened
         }
 
         // Close the modal when clicking on the X
         span.onclick = function() {
             modal.style.display = "none";
+            bgm.pause(); // Pause the BGM when closing the modal
         }
 
         // Close the modal if the user clicks outside of it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                bgm.pause(); // Pause the BGM if clicked outside the modal
             }
         }
     </script>
